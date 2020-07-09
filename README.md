@@ -1,6 +1,8 @@
 # Google Software Product Sprint
 
-This repo contains the projects you'll work on throughout SPS.
+# Nitish Bharti
+
+This repo contains the projects that I(Nitish Bharti) will work on throughout SPS.
 
 To get started:
 
