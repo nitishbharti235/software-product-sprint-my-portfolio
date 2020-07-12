@@ -13,10 +13,9 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random quote to the page.
  */
 function addRandomQuote() {
-
    const quotes = [
        'In choosing both, you lose both.',
        'We need to have a mask that we never take off',
@@ -29,8 +28,7 @@ function addRandomQuote() {
        'We can only live while we lose'
    ]   ;
 
-  // Pick a random greeting.
-  //const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  // Pick a random quote.
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
   const quoteContainer = document.getElementById('quote-container');
