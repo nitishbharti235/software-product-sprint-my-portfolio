@@ -13,16 +13,24 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random quote to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function addRandomQuote() {
+   const quotes = [
+       'In choosing both, you lose both.',
+       'We need to have a mask that we never take off',
+       'When you\'re in front of the enemy, even if your hands are trembling - fight.',
+       'There\'s no way someone who can\'t even protect himself can protect anyone else, is there?',
+       'All of the disadvantages in this world stems from a person\'s lack of ability',
+       'The world runs on power. Everything is determined by the superior power. You are weak. That is why you lose',
+       'All suffering in the world is born from an individual\'s incompetence',
+       'As long as it\'s for the right cause, there\'s nothing wrong with playing dirty.',
+       'We can only live while we lose'
+   ]   ;
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  // Pick a random quote.
+  const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const quoteContainer = document.getElementById('quote-container');
+  quoteContainer.innerText = quote;
 }
