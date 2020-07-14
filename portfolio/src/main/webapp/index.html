@@ -2,27 +2,49 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Nitish Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="content">
-      <h1>Nitish Bharti's Portfolio</h1>
-      <p>
-          I'm Nitish Bharti persuing BTech Cse degree from IIT(ISM) Dhanbad.<br>
-          I like watching anime.<br>
-          tbh I'm just random type person who has no idea what's happening but I cope up with everything
-          and I do things deliberately and honestly with my heart and my energy.<br>
-          Focus and Patient these two things I follow<br><br>
-          <a href="https://www.linkedin.com/in/nitish-bharti/">LinkedIn Profile</a><br>
-          <a href="https://github.com/nitishbharti235">Github Profile</a> <br>
-      </p>
-      <p>This is my portfolio page and here is my faviourite anime character Ken kaneki.</p>
-      <img src="images/kaneki.png"/>
-      <p>Click here to get a random Tokyo Ghoul's Dark Quote:</p>
-      <button onclick="addRandomQuote()">Quote</button>
-      <div id="quote-container"></div>
-    </div>
+      <header id="main-header">
+        <div class="container">
+          <h1>Nitish Bharti's Portfolio</h1>
+        </div>
+      </header>
+      <section id="showcase">
+        <div class="container">
+          <p>
+            Hello, I'm Nitish Bharti persuing B.Tech CSE degree in IIT(ISM) Dhanbad.
+            I like watching anime.
+            I like solving DSA problems. I just like writing codes and seeing that thing working.
+            and I do things deliberately and honestly with my heart and my energy.
+            Focus and Patient these two key things I follow.
+          </p>
+            <ul>
+              <li><a href="https://www.linkedin.com/in/nitish-bharti/">LinkedIn Profile</a></li>
+              <li><a href="https://github.com/nitishbharti235">Github Profile</a></li>
+            </ul>
+        </p>
+        </div>
+      </section>
+
+      <div class="container">
+        <h2>This is my portfolio page and here is my faviourite anime character Ken kaneki from the series Tokyo Ghoul.</h2>
+        <img src="images/kaneki.png" alt="Ken Kaneki Picture.png"/>
+      </div>
+
+      <div class="container">
+        <p id="p-click">Click here to get a random Tokyo Ghoul's Dark Quote:</p>
+      </div>
+      <div class="container">
+        <button onclick="addRandomQuote()">Quote</button>
+      </div>
+      
+      <div class="container"><div id="quote-container"></div></div>
+      
+      <footer id="main-footer">
+        <p>Copyright &copy; 2020 Nitish's Portfolio</p>
+      </footer>
   </body>
 </html>
