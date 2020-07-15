@@ -34,3 +34,17 @@ function addRandomQuote() {
   const quoteContainer = document.getElementById('quote-container');
   quoteContainer.innerText = quote;
 }
+
+function randomMessage(){
+  console.log('Inside randomMessage function.. ');
+  // const msgContainer =  document.getElementById('msg-container');
+  // msgContainer.innerText = "Ur Special!!";
+  console.log('calling /data to get that special message..');
+
+  fetch('/data')
+  .then(response => response.text()
+  .then(message => {
+    console.log('sending a hardcoded message...');
+    document.getElementById('msg-container').innerText = message;
+  }))
+}

@@ -68,6 +68,16 @@ body{
   padding: 10px;
 }
 
+#msg-container {
+  font-size: xx-large;
+  margin: 60px;
+  text-align: center;
+  color: #4EB1BA  ;
+  background-color: #222930;
+  font-weight: bolder;
+  padding: 10px;
+}
+
 #main-footer{
   background: #333;
   color: white;
