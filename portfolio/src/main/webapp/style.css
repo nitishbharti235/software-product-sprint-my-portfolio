@@ -1,9 +1,77 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+body{
+  background-color: #f4f4f4;
+  color: #555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16x;
+  line-height: 1.6em;
+  margin: 0;
 }
 
-#greeting-container {
-  margin-top: 20px;
+.container{
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.container img{
+  width: 50%;
+  align-items: center;
+}
+
+.container button{
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border:none;
+  margin-top: 10px;
+}
+
+#main-header{
+  background-color: coral;
+  color: white;
+}
+
+#showcase{
+  background-image: url('images/light.jpg');
+  background-position: center right;
+  font-size: larger;
+  min-height: auto;
+  margin-bottom: 30px;
+  margin-top: 3px;
+  color: rgb(255, 115, 0);
+}
+
+#showcase ul{
+  text-decoration: none;
+  overflow: hidden;
+  padding: 0;
+  list-style: none;
+}
+
+#showcase ul li{
+  color: violet;
+}
+
+#p-click{
+  color: #333;
+  font-size: 24px;
+  display: inline;
+}
+
+#quote-container {
+  font-size: xx-large;
+  margin: 60px;
+  text-align: center;
+  color: #4EB1BA  ;
+  background-color: #222930;
+  font-weight: bolder;
+  padding: 10px;
+}
+
+#main-footer{
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
 }
