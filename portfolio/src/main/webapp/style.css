@@ -78,6 +78,27 @@ body{
   padding: 10px;
 }
 
+.my-form{
+  width: 80%;
+  padding: 20px;
+  margin: auto;
+}
+
+.my-form .form-group{
+  padding-bottom: 15px;
+}
+
+.my-form label{
+  color: #333333;
+  font-weight: bolder;
+  display: block;
+}
+
+.my-form input[type="text"], .my-form textarea{
+  padding: 8px;
+  width: 100%;
+}
+
 #main-footer{
   background: #333;
   color: white;

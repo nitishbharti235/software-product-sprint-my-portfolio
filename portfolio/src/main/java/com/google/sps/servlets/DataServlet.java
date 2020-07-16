@@ -28,26 +28,27 @@ import java.util.ArrayList;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
-  ArrayList<String> messages = new ArrayList<String>();
+  ArrayList<String> comments = new ArrayList<String>();
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    
-    messages.add("1st Comment");
-    messages.add("2nd Comment");
-    messages.add("3rd Comment");
-
-    String json = convertToJsonUsingGson(messages);
-    messages.clear();
+    String json = convertToJsonUsingGson(comments);
     response.setContentType("application/json");
     response.getWriter().println(json);
-
   }
 
-  private String convertToJsonUsingGson(ArrayList<String> messages) {
-    System.out.println("inside convertToJsonUsingGson...");
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    String comment = request.getParameter("input-comment");
+    comments.add(comment);
+
+    response.sendRedirect("/index.html");
+  }
+
+  private String convertToJsonUsingGson(ArrayList<String> comments) {
+    System.out.println("converting comments to JSON...");
     Gson gson = new Gson();
-    String json = gson.toJson(messages);
+    String json = gson.toJson(comments);
+    System.out.println("converting to JSON is successfully done...");
     return json;
   }
 

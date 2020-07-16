@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="getComments()">
       <header id="main-header">
         <div class="container">
           <h1>Nitish Bharti's Portfolio</h1>
         </div>
       </header>
+      
       <section id="showcase">
         <div class="container">
           <p>
@@ -42,12 +43,16 @@
       </div>
       
       <div class="container"><div id="quote-container"></div></div>
-      
-      <div class="container">
-        <button onclick="randomMessage()">Click Me Senpai ;)</button>
-      </div>
 
-      <div class="container"><div id="msg-container"></div></div>
+      <div class="container"><div id="comment-container"></div></div>
+
+      <form class="my-form" action="/data" method="POST">
+        <div class="form-group">
+          <label>Enter Your Comment:</label>
+          <textarea name="input-comment"></textarea>
+          <input type="submit" />
+        </div>
+      </form>
 
       <footer id="main-footer">
         <p>Copyright &copy; 2020 Nitish's Portfolio</p>

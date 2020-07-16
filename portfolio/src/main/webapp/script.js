@@ -35,32 +35,26 @@ function addRandomQuote() {
   quoteContainer.innerText = quote;
 }
 
-function randomMessage(){
-  console.log('Inside randomMessage function.. ');
-  
-  console.log('calling /data to get that special message..');
+function getComments() {
+  console.log('Inside getComments() function...');
+  console.log('fetching comments by calling /data');
 
   fetch('/data')
   .then(response => response.json())
-  .then(messages => {
+  .then(comments => {
 
-  console.log('Message is successfully fetched...');
-
-  const messageListElement = document.getElementById('msg-container');
-  messageListElement.innerHTML = '';
-  messageListElement.appendChild(
-    createListElement('First Message: ' + messages[0]));
-  messageListElement.appendChild(
-    createListElement('Second Message: ' +  messages[1]));
-  messageListElement.appendChild(
-    createListElement('Third Message: ' +  messages[2]));
-
-  console.log('Succesfully added the messages in portfolio');
+    const commentContainer = document.getElementById('comment-container');
+    comments.forEach((comment) => {
+      commentContainer.appendChild(createListElement(comment));
+    });
+    
+    console.log('Comments are successfully added...');
   });
-} 
+}
 
 function createListElement(text) {
   const liElement = document.createElement('li');
   liElement.innerText = text;
   return liElement;
 }
+ 
