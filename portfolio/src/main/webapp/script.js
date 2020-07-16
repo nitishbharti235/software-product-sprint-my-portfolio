@@ -37,14 +37,30 @@ function addRandomQuote() {
 
 function randomMessage(){
   console.log('Inside randomMessage function.. ');
-  // const msgContainer =  document.getElementById('msg-container');
-  // msgContainer.innerText = "Ur Special!!";
+  
   console.log('calling /data to get that special message..');
 
   fetch('/data')
-  .then(response => response.text()
-  .then(message => {
-    console.log('sending a hardcoded message...');
-    document.getElementById('msg-container').innerText = message;
-  }))
+  .then(response => response.json())
+  .then(messages => {
+
+  console.log('Message is successfully fetched...');
+
+  const messageListElement = document.getElementById('msg-container');
+  messageListElement.innerHTML = '';
+  messageListElement.appendChild(
+    createListElement('First Message: ' + messages[0]));
+  messageListElement.appendChild(
+    createListElement('Second Message: ' +  messages[1]));
+  messageListElement.appendChild(
+    createListElement('Third Message: ' +  messages[2]));
+
+  console.log('Succesfully added the messages in portfolio');
+  });
+} 
+
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }
