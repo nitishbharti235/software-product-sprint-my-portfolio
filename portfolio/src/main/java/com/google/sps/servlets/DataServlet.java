@@ -32,9 +32,7 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // response.setContentType("text/html;");
-    // response.getWriter().println("Hello Nitish. \t Just wanted to tell you, Ur Special!!");
-
+    
     messages.add("1st Comment");
     messages.add("2nd Comment");
     messages.add("3rd Comment");
