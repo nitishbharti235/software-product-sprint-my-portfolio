@@ -34,3 +34,27 @@ function addRandomQuote() {
   const quoteContainer = document.getElementById('quote-container');
   quoteContainer.innerText = quote;
 }
+
+function getComments() {
+  console.log('Inside getComments() function...');
+  console.log('fetching comments by calling /data');
+
+  fetch('/data')
+  .then(response => response.json())
+  .then(comments => {
+
+    const commentContainer = document.getElementById('comment-container');
+    comments.forEach((comment) => {
+      commentContainer.appendChild(createListElement(comment));
+    });
+    
+    console.log('Comments are successfully added...');
+  });
+}
+
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
+ 
