@@ -25,9 +25,16 @@ import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.SortDirection;
 import com.google.gson.Gson;
+import com.google.cloud.language.v1.Document;
+import com.google.cloud.language.v1.LanguageServiceClient;
+import com.google.cloud.language.v1.Sentiment;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import com.google.sps.servlets.Comment;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
@@ -35,18 +42,22 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    Query query = new Query("Task");
+    Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
 
     DatastoreService datastoreService = new DatastoreServiceFactory().getDatastoreService();
     PreparedQuery commentsInDatastore = datastoreService.prepare(query);
 
-    ArrayList<String> comments = new ArrayList<String>();
+    List<Comment> Comments = new ArrayList<Comment>();
     for(Entity entity: commentsInDatastore.asIterable()) {
       String comment = (String) entity.getProperty("comment");
-      comments.add(comment);
+      double score = (double) entity.getProperty("score");
+      long timestamp = (long) entity.getProperty("timestamp");
+      Comment commentObj = new Comment(comment, score, timestamp);
+
+      Comments.add(commentObj);
     }
 
-    String json = convertToJsonUsingGson(comments);
+    String json = convertToJsonUsingGson(Comments);
     response.setContentType("application/json");
     response.getWriter().println(json);
   }
@@ -54,19 +65,28 @@ public class DataServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     String comment = request.getParameter("input-comment");
 
-    Entity taskEntity = new Entity("Task");
-    taskEntity.setProperty("comment", comment);
+    Document doc = Document.newBuilder().setContent(comment).setType(Document.Type.PLAIN_TEXT).build();
+    LanguageServiceClient languageService = LanguageServiceClient.create();
+    Sentiment sentiment = languageService.analyzeSentiment(doc).getDocumentSentiment();
+    double score = sentiment.getScore();
+    languageService.close();
+    System.out.println(score);
+
+    Entity commentEntity = new Entity("Comment");
+    commentEntity.setProperty("comment", comment);
+    commentEntity.setProperty("score", score);
+    commentEntity.setProperty("timestamp", System.currentTimeMillis());
 
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-    datastore.put(taskEntity);
+    datastore.put(commentEntity);
 
     response.sendRedirect("/index.html");
   }
 
-  private String convertToJsonUsingGson(ArrayList<String> comments) {
+  private String convertToJsonUsingGson(List<Comment> Comments) {
     System.out.println("converting comments to JSON...");
     Gson gson = new Gson();
-    String json = gson.toJson(comments);
+    String json = gson.toJson(Comments);
     System.out.println("converting to JSON is successfully done...");
     return json;
   }
