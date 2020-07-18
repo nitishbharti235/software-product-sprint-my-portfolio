@@ -32,6 +32,9 @@ public final class TimeRange {
   public static final Comparator<TimeRange> ORDER_BY_START = new Comparator<TimeRange>() {
     @Override
     public int compare(TimeRange a, TimeRange b) {
+      if(a.start == b.start) {
+        return Long.compare(a.end(), b.end());
+      }
       return Long.compare(a.start, b.start);
     }
   };
@@ -49,7 +52,7 @@ public final class TimeRange {
   private final int start;
   private final int duration;
 
-  private TimeRange(int start, int duration) {
+  public TimeRange(int start, int duration) {
     this.start = start;
     this.duration = duration;
   }
