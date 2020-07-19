@@ -1,65 +1,234 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Nitish Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body onload="getComments()">
-      <header id="main-header">
-        <div class="container">
-          <h1>Nitish Bharti's Portfolio</h1>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <title>Nitish Bharti</title>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" onload="getComments()">
+  <!--Navbar-->
+
+  <div id="Header">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#Navbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="#" class="navbar-brand">
+          <h3>Portfolio</h3>
+        </a>
+        <div class="collapse navbar-collapse" id="Navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="#About" class="nav-link">About Me</a></li>
+            <li class="nav-item"><a href="#Skills" class="nav-link">Skills</a></li>
+            <li class="nav-item"><a href="#Experience" class="nav-link">Experience</a></li>
+            <li class="nav-item"><a href="#Contact" class="nav-link">Comment</a></li>
+            <li class="nav-item"><a href="#Anime" class="nav-link">Anime</a></li>
+          </ul>
         </div>
-      </header>
-      
-      <section id="showcase">
-        <div class="container">
-          <p>
-            Hello, I'm Nitish Bharti persuing B.Tech CSE degree in IIT(ISM) Dhanbad.
-            I like watching anime.
-            I like solving DSA problems. I just like writing codes and seeing that thing working.
-            and I do things deliberately and honestly with my heart and my energy.
-            Focus and Patient these two key things I follow.
-          </p>
+      </div>
+    </nav>
+  </div>
+
+  <!--Showcase-->
+  <div id="bg-img">
+  </div>
+
+  <!--ABOUT PART-->
+  <div id="About">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div id="AboutData">
+            <div class="card bg-white">
+              <!-- <div id="hello-world"><h1> &lt; Hello World! &nbsp;&frasl;&gt;</h1></div> -->
+              <div class="card-title my-5">
+                <div class="media">
+                  <!-- <img src="images/anshuman.jpg" width="250" height="250"
+                    class="img-fluid rounded-top mx-5 d-none d-lg-block"> -->
+                  <div class="media-body">
+                    <h1> &lt; Hello World! &nbsp;&frasl;&gt;</h1>
+                    <h2>I'm Nitish Bharti</h2>
+                    <br>
+                    <p id="about_text">
+                      I am persuing B.Tech CSE degree in IIT(ISM) Dhanbad.
+                      I like solving Data Structure and Algorithm problems.
+                      I love watching anime and listening to music. I recently started playing chess and I'm loving it.
+                      I do things deliberately and honestly with my heart and my energy. 
+                      Focus and Patient these two key things I follow.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer" id="links">
+              <a href="https://www.linkedin.com/in/nitish-bharti/"><i
+                  class="fa fa-linkedin fa-2x mx-3"></i></a>
+              <a href="https://github.com/nitishbharti235"><i class="fa fa-github fa-2x mx-3"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--SKILLS-->
+  <div id="Skills">
+    <div class="container">
+      <span class="text-white">My Knowledge Pool</span>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <div class="card bg-whiter" id="skill">
+            <h3 class="ml-3 my-3">C++</h3>
+            <div class="progress mx-3">
+              <div class="progress-bar" style="width:90%"></div>
+            </div>
+            <h3 class="ml-3 my-3">Data Structures and Algorithms</h3>
+            <div class="progress mx-3">
+              <div class="progress-bar" style="width:90%"></div>
+            </div>
+            <h3 class="ml-3 my-3">Object Oriented Programming</h3>
+            <div class="progress mx-3">
+              <div class="progress-bar" style="width:90%"></div>
+            </div>
+            <h3 class="ml-3 my-3">Java</h3>
+            <div class="progress mx-3">
+              <div class="progress-bar" style="width:80%"></div>
+            </div>
+            <h3 class="ml-3 my-3">Python</h3>
+            <div class="progress mx-3">
+              <div class="progress-bar" style="width:80%"></div>
+            </div>
+            <h3 class="ml-3 my-3 ">Android App Development</h3>
+            <div class="progress mx-3 mb-3">
+              <div class="progress-bar" style="width:70%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Experience-->
+  <div id="Experience">
+    <div class="container">
+      <span class="text-white">Experience</span>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <div class="card bg-whiter" id="academic">
             <ul>
-              <li><a href="https://www.linkedin.com/in/nitish-bharti/">LinkedIn Profile</a></li>
-              <li><a href="https://github.com/nitishbharti235">Github Profile</a></li>
+              <li>
+                <h3>Codenation, ​ Bangalore - Summer Intern</h3>
+                <h6>Developed an end to end pipeline that analyzes and detects issues in
+                  Ant and MSBuild build files. This mainly focuses on making the
+                  build files more reproducible, maintainable.
+                  Fixers can also be used to automatically fix the issues.<br><br>
+                  Technology Used: Java, Python, Neo4j, Ant API, Django</h6>
+                <br>
+              </li>
+              <li>
+                <h3>Mentor at CodeIsm - ​ Volunteer</h3>
+                <h6>CodeIsm is a Sports programming club of IIT(ISM) Dhanbad. <br>
+                  &nbsp; ● Teaching Data Structure and Algorithms to 1​st year students.</h6><br>
+              </li>
             </ul>
-        </div>
-      </section>
-
-      <div class="container">
-        <h2>This is my portfolio page and here is my faviourite anime character Ken kaneki from the series Tokyo Ghoul.</h2>
-        <img src="images/kaneki.png" alt="Ken Kaneki Picture.png"/>
-      </div>
-
-      <div class="container">
-        <p id="p-click">Click here to get a random Tokyo Ghoul's Dark Quote:</p>
-      </div>
-
-      <div class="container">
-        <button onclick="addRandomQuote()">Quote</button>
-      </div>
-      
-      <div class="container"><div id="quote-container"></div></div>
-
-      <div class="container">
-        <div id="comment-container">
-          <h2>Comments</h2>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <form class="my-form" action="/data" method="POST">
-        <div class="form-group">
-          <label>Enter Your Comment:</label>
-          <textarea name="input-comment"></textarea>
-          <input type="submit" />
+  <!--Contact-->
+  <div id="Contact">
+    <div class="container">
+      <span class="text-white">Comments</span>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <div class="card bg-white">
+            <div class="card-header">
+              <h1></h1>
+              <form action="/data" method="POST">
+                <div class="form-group">
+                  <textarea rows="4" cols="4" placeholder="Type your comment here... " class="form-control" name="input-comment" required></textarea>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-success text-white">Submit</button>
+                </div>
+              </form>
+              <div id="comment-container">
+              </div>
+            </div>
+          </div>
         </div>
-      </form>
+      </div>
+    </div>
+  </div>
 
-      <footer id="main-footer">
-        <p>Copyright &copy; 2020 Nitish's Portfolio</p>
-      </footer>
-  </body>
+  <!-- Anime -->
+  <div id="Anime">
+    <div class="container">
+      <span class="text-white">Anime</span>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <div class="card bg-white">
+            <div class="card-header">
+              <h4>Here is my faviourite anime character Ken kaneki from the series Tokyo Ghoul.</h4>
+              <img src="images/kaneki.png" alt="Ken Kaneki Picture.png" class="kaneki-img"/>
+              <div>
+                <p id="p-click">Click here to get a random Tokyo Ghoul's Dark Quote:</p>
+              </div>
+              <button onclick="addRandomQuote()">Quote</button>
+              <div id="quote-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Footer-->
+  <div id="footer">
+    <div class="container-fluid bg-dark">
+      <div class="row">
+        <div class="col">
+          <div class="container">
+            <h3 class="text-white pt-3 text-center" id="developed">Copyright &copy; 2020 Nitish Bharti</h3>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
