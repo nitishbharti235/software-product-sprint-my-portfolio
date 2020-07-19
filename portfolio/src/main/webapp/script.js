@@ -47,14 +47,52 @@ function getComments() {
     comments.forEach((comment) => {
       commentContainer.appendChild(createListElement(comment));
     });
-    
+    commentContainer.appendChild( getClrDivElement() );
+
     console.log('Comments are successfully added...');
   });
 }
 
-function createListElement(text) {
+function createListElement(commentObj) {
   const liElement = document.createElement('li');
-  liElement.innerText = text;
+  var comment = commentObj.comment;
+  var sentimentScore = commentObj.sentimentScore;
+  
+  liElement.appendChild( getParaComment(comment) );
+  liElement.appendChild( getParaSentimentScore(sentimentScore) );
+  
   return liElement;
 }
  
+function getParaComment(comment) {
+  var paragraph = createParaElement(comment);
+  paragraph.className = "comment"
+
+  return paragraph;
+}
+
+function getParaSentimentScore(sentimentScore) {
+  sentimentScore =  Math.round(sentimentScore * 10) / 10;
+  var score = sentimentScore.toString();
+  score = "sentiment score: "+score;
+
+  var paragraph = createParaElement(score);
+  paragraph.className = "sentiment";
+
+  return paragraph;
+}
+
+function createParaElement(comment) {
+  var para = document.createElement("P");                       
+  var t = document.createTextNode(comment);
+  para.appendChild(t);
+
+  return para;
+}
+
+function getClrDivElement() {
+  var div = document.createElement("div");
+  div.className = "clr";
+  
+  return div;
+}
