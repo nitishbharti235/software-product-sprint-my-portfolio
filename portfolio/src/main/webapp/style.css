@@ -1,61 +1,259 @@
-body{
-  background-color: #f4f4f4;
-  color: #555;
+body {
+  background-image: url('images/light.jpg');
+  background-size: cover;
+  background-position: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16x;
-  line-height: 1.6em;
-  margin: 0;
 }
 
-.container{
-  width: 80%;
-  margin: auto;
-  overflow: hidden;
+#Header a  {
+  transition-duration: 0.2s;
 }
 
-.container img{
-  width: 50%;
-  align-items: center;
+#links i {
+  transition-duration: 0.2s;
 }
 
-.container button{
+#Header a:hover {
+  color:#FFF;    
+}
+
+.title {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#bg-img {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-height: 350px;
+}
+
+#About {
+  margin-top: -200px;
+}
+
+#About .fa {
+  color: #FFF
+}
+
+#About .fa:hover {
+  color: #2d5986;
+}
+
+#links {
+  background-color: #19334d;
+}
+
+#About span {
+  padding: 10px 20px 10px 20px;
+}
+
+#About hr {
+  border-width:2px;
+  margin-top:06px;
+}
+
+#Skills {
+  margin-top: 150px;
+}
+
+#skill {
+  padding: 5px;
+}
+
+#Skills span {
+  font-size: 24px;
+  background-color: #333333;
+  padding: 10px 20px 10px 20px;
+}
+#Skills hr {
+  background-color: #333333;
+  border-width:2px;
+  margin-top:06px;
+}
+
+.progress-bar {
+  background-color: #006666;
+}
+
+#Contact {
+  margin-top: 150px;
+}
+
+
+#Contact span {
+  font-size: 24px;
+  background-color: #333333;
+  padding: 10px 20px 10px 20px;
+}
+#Contact hr {
+  background-color: #333333;
+  border-width:2px;
+  margin-top:06px;
+}
+
+#academic {
+  padding-top: 20px;
+}
+
+#academic ul {
+  list-style: none;
+}
+
+#academic h3 {
+  color: #4EB1BA;
+}
+
+#Experience {
+  margin-top: 150px;
+}
+
+#Experience span {
+  font-size: 24px;
+  background-color: #333333;
+  padding: 10px 20px 10px 20px;
+}
+
+#Experience hr {
+  background-color: #333333;
+  border-width:2px;
+  margin-top:06px;
+}
+
+#Contact {
+  margin-top: 150px;
+}
+
+#Contact span {
+  font-size: 24px;
+  background-color: #333333;
+  padding: 10px 20px 10px 20px;
+}
+#Contact hr {
+  background-color: #333333;
+  border-width:2px;
+  margin-top:06px;
+}
+
+#Anime {
+  margin-top: 150px;
+}
+
+#Anime span {
+  font-size: 24px;
+  background-color: #333333;
+  padding: 10px 20px 10px 20px;
+}
+
+#Anime hr {
+  background-color: #333333;
+  border-width:2px;
+  margin-top:06px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-family: "Roboto";
+  text-transform: uppercase;
+  word-spacing: 2px;
+}
+
+p{
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+#developed {
+  padding-bottom: 5px;
+}
+
+#about_text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 10px;
+  line-height: 1.5;
+  color: #212529;
+}
+h3 {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.navbar-brand h3 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.media {
+  border-radius: 0%;
+  padding-top: 0%;
+  margin-top: 0%;
+}
+
+.media-body {
+  padding-top: 0%;
+  margin-top: 0%;
+}
+
+.media-body h1 {
+  background-color: #333333;
+  color: #4EB1BA;
+  text-align: center;
+}
+
+.media-body h2 {
+  font-weight: bolder;
+  text-align: center;
+}
+
+#comment-container {
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 70px;
+  }
+  
+#comment-container h2 {
+  text-align: center;
+}
+
+#comment-container li {
+  padding-left: 5px;
+  list-style: none;
+  padding-bottom:  8px;
+}
+
+.comment {
+  float: left;
+  width: 70%;
+  border-bottom: dotted 1px #333;
+}
+
+.sentiment {
+  float: left;
+  width: 30%;
+  text-align: right;
+  border-bottom: dotted 1px #333;
+  font-weight: bold;
+}
+
+.clr {
+  clear:both;
+}
+
+#p-click {
+  color: #333;
+  font-size: 24px;
+  display: inline;
+}
+
+.card-header button {
   background-color: #333;
   color: #fff;
   padding: 10px 15px;
   border:none;
   margin-top: 10px;
-}
-
-#main-header{
-  background-color: coral;
-  color: white;
-}
-
-#showcase{
-  background-image: url('images/light.jpg');
-  background-position: center right;
-  font-size: larger;
-  min-height: auto;
-  margin-bottom: 30px;
-  margin-top: 3px;
-  color: rgb(255, 115, 0);
-}
-
-#showcase ul{
-  text-decoration: none;
-  overflow: hidden;
-  padding: 0;
-  list-style: none;
-}
-
-#showcase ul li{
-  color: violet;
-}
-
-#p-click{
-  color: #333;
-  font-size: 24px;
-  display: inline;
 }
 
 #quote-container {
@@ -68,75 +266,9 @@ body{
   padding: 10px;
 }
 
-#msg-container {
-  font-size: xx-large;
-  margin: 60px;
-  text-align: center;
-  color: #4EB1BA  ;
-  background-color: #222930;
-  font-weight: bolder;
-  padding: 10px;
-}
-
-.my-form{
-  width: 80%;
-  padding: 20px;
-  margin: auto;
-}
-
-.my-form .form-group{
-  padding-bottom: 15px;
-}
-
-.my-form label{
-  color: #333333;
-  font-weight: bolder;
+.kaneki-img {
   display: block;
-}
-
-.my-form input[type="text"], .my-form textarea{
-  padding: 8px;
-  width: 100%;
-}
-
-#comment-container{
-  border: 1px #ccc solid;
-  padding: 10px;
-  border-radius: 15px;
-}
-
-#comment-container h2{
-  text-align: center;
-}
-
-#comment-container li{
-  padding-left: 5px;
-  list-style: none;
-  padding-bottom:  8px;
-}
-
-.comment{
-  float: left;
-  width: 70%;
-  border-bottom: dotted 1px #333;
-}
-
-.sentiment{
-  float: left;
-  width: 30%;
-  text-align: right;
-  border-bottom: dotted 1px #333;
-  font-weight: bold;
-}
-
-.clr{
-  clear:both;
-}
-
-#main-footer{
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 65%;
 }
